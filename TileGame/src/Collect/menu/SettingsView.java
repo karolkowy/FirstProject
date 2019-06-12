@@ -30,12 +30,12 @@ public class SettingsView extends JFrame implements ActionListener {
 	public static int level=1;
 	
 	public SettingsView() throws HeadlessException {
-		this.setSize(900,800);
+		this.setSize(900,900);
+		this.setTitle("Ustawienia");
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(new GridLayout(5,1));
 		setBackground(Color.blue);
 
-		JPanel p_u_top = new JPanel();
 		JPanel p_u_nazwauzytkowniaka = new JPanel();
 		JPanel p_u_wybor_koloru = new JPanel();
 		JPanel p_u_wybor_postaci = new JPanel();
@@ -88,7 +88,7 @@ public class SettingsView extends JFrame implements ActionListener {
 			//dodawanie elementow
 			
 			// top panel
-				p_u_top.add(new JLabel("USTAWIENIA"));
+				//p_u_top.add(new JLabel("USTAWIENIA"));
 			
 				
 			//penel podawania nazwy
@@ -99,9 +99,6 @@ public class SettingsView extends JFrame implements ActionListener {
 				p_u_nazwauzytkowniaka.add(l_u_nazwa);
 				p_u_nazwauzytkowniaka.add(tfx_nazwa);
 				p_u_nazwauzytkowniaka.add(button_nazwa);
-				
-				
-				
 
 				   
 			//panel plansza
@@ -196,7 +193,7 @@ public class SettingsView extends JFrame implements ActionListener {
 				   p_u_wybor_poziomu_trudnosci.add(przycisk3_poziom); 
 				  
 			//dodawanie paneli do ramki	 
-				   add(p_u_top);
+				   //add(p_u_top);
 				   add(p_u_nazwauzytkowniaka);
 				   add(p_u_wybor_koloru);
 				   add(p_u_wybor_postaci);

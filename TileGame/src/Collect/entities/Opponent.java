@@ -6,6 +6,7 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -67,7 +68,7 @@ public class Opponent extends Creature
 		if(checkEntityCollisions(0f, yMove)) {directionchange*=-1;}
 		
 		//odbijanie sie przy chodzenie w lewo
-	int txmoveleft = (int) (x + xMove + bounds.x)/Tile.TILEWIDTH;
+		int txmoveleft = (int) (x + xMove + bounds.x)/Tile.TILEWIDTH;
 		if(collisionWithTile(txmoveleft, (int) (y + bounds.y)/Tile.TILEHEIGHT) ||
 				collisionWithTile(txmoveleft, (int) (y+ bounds.y +bounds.height)/Tile.TILEHEIGHT)) {directionchange*=-1;}
 		
@@ -92,15 +93,26 @@ public class Opponent extends Creature
 	public  void die() {
 		//System.out.println("You lose");
 		State.setState(handler.getGame().menuState);
-		JFrame lose=new JFrame("lose");
+		JFrame lose=new JFrame("You lose");
 		lose.setVisible(true);
 		lose.setSize(300,300);
 		lose.setLocation(900, 450);
 		String finalstring;
-		if(Collect.menu.SettingsView.name==null) {finalstring=("Your score:"+Collect.statics.Tree.score);}
-		else {System.out.println(finalstring=Collect.menu.SettingsView.name+" your score is: "+Collect.statics.Tree.score);}
+		//ImageIcon obrazek1 = new ImageIcon(getClass().getResource("CollectPostacLooser.png"));
+		//JLabel etykieta = new JLabel();
+		//etykieta.setIcon(obrazek1);
+		
+		if(Collect.menu.SettingsView.name==null) {
+			finalstring=(" Twój wynik: "+Collect.statics.Tree.score);
+			}
+		else {
+			System.out.println(finalstring=Collect.menu.SettingsView.name+" to twój wynik: "+Collect.statics.Tree.score);
+		}
 		JLabel labellose=new JLabel(finalstring);
 		lose.add(labellose);
+		//lose.add(etykieta);
+		Collect.Game.running=false;
+		Collect.statics.Tree.score=0;
 		
 	};
 	

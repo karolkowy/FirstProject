@@ -44,7 +44,7 @@ public class World
 		Random r = new Random(); 
 		int randdirection = r.nextInt(2);
 		
-		//zmieniajace sie kolorki	
+		
 		 Timer timerColor = new Timer(5000, new ActionListener() {
 			
 			@Override

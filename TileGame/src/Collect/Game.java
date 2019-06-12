@@ -21,7 +21,7 @@ public class Game implements Runnable
 	private int width, height;
 	public String title;
 	
-	private boolean running = false;
+	public static boolean running = false;
 	private Thread thread; 
 	
 	private BufferStrategy bs; //zawiera instrukcje jak komputer ma cos rysowaæ
@@ -185,4 +185,5 @@ public class Game implements Runnable
 			e.printStackTrace();
 		}
 	}
+
 }

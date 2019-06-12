@@ -173,7 +173,7 @@ public class Menu extends JFrame implements ActionListener {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					Game game = new Game("Dzia³a?", 890, 700);
+					Game game = new Game("Collect!", 890, 700);
 					game.start();
 				}
 			};

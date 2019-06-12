@@ -19,7 +19,7 @@ public class Tree extends StaticEntity
 		super(handler, x, y, Tile.TILEWIDTH, Tile.TILEHEIGHT);
 		
 		bounds.x=0;		//parametry kolizyjne
-		bounds.y= 16;
+		bounds.y=32;
 		bounds.width= 8;
 		bounds.height=32;
 	}
@@ -45,8 +45,8 @@ public class Tree extends StaticEntity
 	public void render(Graphics g) {
 		g.drawImage(Assets.tree, (int) (x-handler.getGameCamera().getxOffset()), (int) (y-handler.getGameCamera().getyOffset()), width, height, null);
 		
-		g.setColor(Color.red);
-		g.fillRect((int) (x+ bounds.x - handler.getGameCamera().getxOffset()), (int) (y+bounds.y-handler.getGameCamera().getyOffset()), (int) (bounds.width), (int) (bounds.height)); //prostok¹t do sprawdzania kolizji
+		//g.setColor(Color.red);
+		//g.fillRect((int) (x+ bounds.x - handler.getGameCamera().getxOffset()), (int) (y+bounds.y-handler.getGameCamera().getyOffset()), (int) (bounds.width), (int) (bounds.height)); //prostok¹t do sprawdzania kolizji
 
 	}
 
